@@ -1,0 +1,22 @@
+{
+  "name": "@example/basics",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "astro": "^1.1.5"
+  },
+  "devDependencies": {
+    "@astrojs/react": "^1.1.1",
+    "@astrojs/solid-js": "^1.1.0",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "solid-js": "^1.4.3"
+  }
+}
