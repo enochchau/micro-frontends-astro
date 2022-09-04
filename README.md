@@ -17,6 +17,25 @@ For SolidJS, this would look like:
 import "solid-js";
 ```
 
+In order to get Astro to always bring us to our JS Framework's application Root, we must configure our routing tree using a spread.
+
+```
+pages
+| - solid
+|     | - [...route].astro
+| - react
+      | - [...route].astro
+```
+
+Then at the top of the `[...route].astro` file, define all the routes of the App.
+
+```javascript
+export function getStaticPaths() {
+  // we need to define all the possible solid routes so astro knows to redirect here
+  return [{ params: { route: undefined } }, { params: { route: "page1" } }];
+}
+```
+
 ## React
 
 The component in [`/src/component/React.tsx`](/src/component/React.tsx) is the React Application.
