@@ -83,3 +83,7 @@ function GoToReact() {
   return <a href="javascript:window.location.href='/react'">Go To React</a>;
 }
 ```
+
+---
+
+https://enochchau.com/blog/2022/micro-frontends-with-astro/
