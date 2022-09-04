@@ -18,7 +18,7 @@ function GoToSolid() {
 }
 
 function GoToHome() {
-  return <a href="/">Go To HOme</a>
+  return <a href="/">Go To Home</a>
 }
 
 export default function App() {
