@@ -5,9 +5,10 @@ This is a demo of a SolidJS and React mixed micro-frontend application.
 The routes behind `/react` are managed by the React app while the `/solid` routes are managed by the SolidJS app.
 
 When using multiple frameworks with Astro, you must explicitlydefine which framework to use. For example, to tell both TypeScript and Astro that the component is a React component, you should put the following at the top of the file.
+
 ```javascript
 /** @jsxImportSource react */
-import React from 'react';
+import React from "react";
 ```
 
 For SolidJS, this would look like:
@@ -35,6 +36,8 @@ export function getStaticPaths() {
   return [{ params: { route: undefined } }, { params: { route: "page1" } }];
 }
 ```
+
+See the [Astro docs on Dynamic routes](https://docs.astro.build/en/core-concepts/routing/#dynamic-routes) for more information.
 
 ## React
 
