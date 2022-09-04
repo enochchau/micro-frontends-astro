@@ -1,0 +1,14 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import React from "../../components/React";
+
+export function getStaticPaths() {
+  // we need to define all the possible react routes so astro knows to redirect here
+  return [{ params: { route: undefined } }, { params: { route: "page1" } }];
+}
+---
+
+<Layout title="React">
+  <h1>Astro title</h1>
+  <React client:only="react" />
+</Layout>

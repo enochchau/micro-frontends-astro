@@ -10,11 +10,14 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^1.1.5"
+    "@solidjs/router": "^0.4.3",
+    "astro": "^1.1.5",
+    "react-router-dom": "6"
   },
   "devDependencies": {
     "@astrojs/react": "^1.1.1",
     "@astrojs/solid-js": "^1.1.0",
+    "@types/react": "^18.0.18",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "solid-js": "^1.4.3"

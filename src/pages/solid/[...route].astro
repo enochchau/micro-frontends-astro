@@ -1,0 +1,14 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Solid from "../../components/Solid";
+
+export function getStaticPaths() {
+  // we need to define all the possible solid routes so astro knows to redirect here
+  return [{ params: { route: undefined } }, { params: { route: "page1" } }];
+}
+---
+
+<Layout title="Solid">
+  <h1>Astro title</h1>
+  <Solid client:only="solid-js" />
+</Layout>
