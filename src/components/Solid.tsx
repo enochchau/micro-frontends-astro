@@ -33,7 +33,7 @@ export default function App() {
   const Routes = useRoutes(routes);
   return (
     <Router>
-      <h1>Solid title</h1>
+      <h1>The rest of this page is rendered by SolidJS</h1>
       <Routes />
     </Router>
   );

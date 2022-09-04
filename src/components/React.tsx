@@ -25,7 +25,7 @@ function GoToHome() {
 export default function App() {
   return (
     <BrowserRouter>
-      <h1>React title</h1>
+      <h1>The rest of this page is rendered by React</h1>
       <Routes />
     </BrowserRouter>
   );
