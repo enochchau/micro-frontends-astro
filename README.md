@@ -20,14 +20,14 @@ import "solid-js";
 ## React
 
 The component in [`/src/component/React.tsx`](/src/component/React.tsx) is the React Application.
-Routing is handled by react-router-dom.
+Routing is handled by [react-router-dom](https://github.com/remix-run/react-router).
 Navigation between React routes must use the `<Link/>` component from react-router.
 Navigation to the Solid App routes or the default Astro routes can be done using the regular `<a/>` anchor tag.
 
 ## Solid
 
 The component in [`/src/component/Solid.tsx`](/src/component/Solid.tsx) is the React Application.
-Routing is handled by @solidjs/router.
+Routing is handled by [@solidjs/router](https://github.com/solidjs/solid-router).
 Navigation between Solid routes can be done with either the provided `<Link/>` component or with `<a/>` anchor tags.
 In order to navigate from the Solid App to the React App or Astro routes, we must use some custom JS
 to force @solidjs/router to relinquish control of browser routing.
