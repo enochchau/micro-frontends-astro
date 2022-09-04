@@ -1,10 +1,11 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import {routeBase} from '../util/routing'
 ---
 
 <Layout title="Welcome to Astro.">
 <ul>
-	<li><a href="/react">React Micro Frontend</a></li>
-	<li><a href="/solid">Solid Micro Frontend</a></li>
+	<li><a href={`${routeBase}/react`}>React Micro Frontend</a></li>
+	<li><a href={`${routeBase}/solid`}>Solid Micro Frontend</a></li>
 </ul>
 </Layout>

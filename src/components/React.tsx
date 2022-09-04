@@ -1,8 +1,9 @@
 /** @jsxImportSource react */
 import React from 'react';
 import { useRoutes, Link, BrowserRouter } from "react-router-dom";
+import { routeBase } from '../util/routing';
 
-let rootRoute = "react";
+let rootRoute = routeBase + "/react";
 
 export const routes = [
   {
@@ -14,11 +15,11 @@ export const routes = [
 
 // this works fine with react router
 function GoToSolid() {
-  return <a href="/solid">Go To Solid</a>;
+  return <a href={`${routeBase}/solid`}>Go To Solid</a>;
 }
 
 function GoToHome() {
-  return <a href="/">Go To Home</a>
+  return <a href={routeBase + '/'}>Go To Home</a>
 }
 
 export default function App() {
@@ -41,7 +42,7 @@ function Root() {
       <h1>Root Page</h1>
       <ul>
         <li>
-          <Link to="page1">Go to Page 1</Link>
+          <Link to={routes[1].path}>Go to Page 1</Link>
         </li>
         <li>
           <GoToSolid />
@@ -60,7 +61,7 @@ function Page1() {
       <h1>Page 1</h1>
       <ul>
         <li>
-          <Link to={"/" + rootRoute}>Got to Root</Link>
+          <Link to={routes[0].path}>Got to Root</Link>
         </li>
         <li>
           <GoToSolid />

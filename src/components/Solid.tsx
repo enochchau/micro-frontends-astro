@@ -2,22 +2,31 @@
 import "solid-js";
 
 import { Router, useRoutes, Link } from "@solidjs/router";
+import { routeBase } from "../util/routing";
 
-const rootRoute = "solid";
+const rootRoute = routeBase + "/solid";
 
 const routes = [
   { path: rootRoute, element: Root },
   { path: rootRoute + "/page1", element: Page1 },
 ];
 
+function NativeAnchor(props: any) {
+  return (
+    <a href={`javascript:window.location.href='${props.href}'`}>
+      {props.children}
+    </a>
+  );
+}
+
 // need to do some JS hacks to get solid router
 // to hand routing back to the browser
 function GoToReact() {
-  return <a href="javascript:window.location.href='/react'">Go To React</a>;
+  return <NativeAnchor href={`${routeBase}/react`}>Go To React</NativeAnchor>
 }
 
 function GoToHome() {
-  return <a href="javascript:window.location.href='/'">Go To Home</a>;
+  return <NativeAnchor href={routeBase + '/'}>Go To Home</NativeAnchor>
 }
 
 export default function App() {
@@ -36,7 +45,7 @@ function Root() {
       <h1>Root Page</h1>
       <ul>
         <li>
-          <Link href="page1">Got to Page 1</Link>
+          <Link href={routes[1].path}>Got to Page 1</Link>
         </li>
         <li>
           <GoToReact />
@@ -55,7 +64,7 @@ function Page1() {
       <h1>Page 1</h1>
       <ul>
         <li>
-          <Link href={"/" + rootRoute}>Go To Root</Link>
+          <Link href={routes[0].path}>Go To Root</Link>
         </li>
         <li>
           <GoToReact />
