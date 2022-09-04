@@ -1,6 +1,7 @@
 # Micro Frontends with Astro
 
 This is a demo of a SolidJS and React mixed micro-frontend application using Astro as the base MPA framework.
+You can view a live demo at https://ec965.github.io/micro-frontends-astro.
 
 The routes behind `/react` are managed by the React app while the `/solid` routes are managed by the SolidJS app.
 
