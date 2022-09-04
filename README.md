@@ -4,6 +4,10 @@ This is a demo of a SolidJS and React mixed micro-frontend application.
 
 The routes behind `/react` are managed by the React app while the `/solid` routes are managed by the SolidJS app.
 
+## Astro Setup
+
+### Using Multiple Frameworks
+
 When using multiple frameworks with Astro, you must explicitlydefine which framework to use. For example, to tell both TypeScript and Astro that the component is a React component, you should put the following at the top of the file.
 
 ```javascript
@@ -17,6 +21,8 @@ For SolidJS, this would look like:
 /** @jsxImportSource solid-js */
 import "solid-js";
 ```
+
+### Configure Dynamic Routing
 
 In order to get Astro to always bring us to our JS Framework's application Root, we must configure our routing tree using a spread.
 
@@ -38,6 +44,19 @@ export function getStaticPaths() {
 ```
 
 See the [Astro docs on Dynamic routes](https://docs.astro.build/en/core-concepts/routing/#dynamic-routes) for more information.
+
+### Skipping SSR
+
+Client side routing doesn't work well with SSR as `document` is not present during static HTML generation.
+
+We can skip Astro's SSR by using the [`client:only`](framework) directive on our application root components.
+
+```javascript
+<Layout title="React">
+  <h1>Astro title</h1>
+  <React client:only="react" />
+</Layout>
+```
 
 ## React
 
