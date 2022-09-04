@@ -1,6 +1,6 @@
 # Micro Frontends with Astro
 
-This is a demo of a SolidJS and React mixed micro-frontend application.
+This is a demo of a SolidJS and React mixed micro-frontend application using Astro as the base MPA framework.
 
 The routes behind `/react` are managed by the React app while the `/solid` routes are managed by the SolidJS app.
 
@@ -8,7 +8,8 @@ The routes behind `/react` are managed by the React app while the `/solid` route
 
 ### Using Multiple Frameworks
 
-When using multiple frameworks with Astro, you must explicitlydefine which framework to use. For example, to tell both TypeScript and Astro that the component is a React component, you should put the following at the top of the file.
+When using multiple frameworks with Astro, you must explicitly define which framework to use for each component.
+For example, to tell both TypeScript and Astro that the component is a React component, you should put the following at the top of the file.
 
 ```javascript
 /** @jsxImportSource react */
@@ -24,7 +25,7 @@ import "solid-js";
 
 ### Configure Dynamic Routing
 
-In order to get Astro to always bring us to our JS Framework's application Root, we must configure our routing tree using a spread.
+In order to get Astro to always bring us to our framework's application Root, we must configure our routing tree using a spread.
 
 ```
 pages
@@ -39,6 +40,7 @@ Then at the top of the `[...route].astro` file, define all the routes of the App
 ```javascript
 export function getStaticPaths() {
   // we need to define all the possible solid routes so astro knows to redirect here
+  // our app has 2 routes, the root page and the page1 page
   return [{ params: { route: undefined } }, { params: { route: "page1" } }];
 }
 ```
@@ -47,9 +49,10 @@ See the [Astro docs on Dynamic routes](https://docs.astro.build/en/core-concepts
 
 ### Skipping SSR
 
-Client side routing doesn't work well with SSR as `document` is not present during static HTML generation.
+Client side routing doesn't work with SSR.
 
-We can skip Astro's SSR by using the [`client:only`](framework) directive on our application root components.
+We can skip Astro's SSR by using the [`client:only`](https://docs.astro.build/en/reference/directives-reference/#clientonly) 
+directive on our application root components.
 
 ```javascript
 <Layout title="React">
