@@ -1,4 +1,5 @@
-import React from "react";
+/** @jsxImportSource react */
+import React from 'react';
 import { useRoutes, Link, BrowserRouter } from "react-router-dom";
 
 let rootRoute = "react";
